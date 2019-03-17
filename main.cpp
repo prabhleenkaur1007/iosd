@@ -1,26 +1,17 @@
+#include <stdio.h>
 
-#include <sstream>
-#include <vector>
-#include <iostream>
-using namespace std;
-vector<int> parseInts(string str) {
-        stringstream ss(str);   
-        vector<int> result;
-        char ch;
-        int tmp;
-        while(ss >> tmp) {     
-        result.push_back(tmp);
-        ss >> ch;           
-        }
-        return result;
+void update(int *a,int *b) {
+        int sum = *a + *b;
+        int absDifference = *a - *b > 0 ? *a - *b : -(*a - *b);
+        *a = sum;
+        *b = absDifference; 
 }
 int main() {
-    string str;
-    cin >> str;
-    vector<int> integers = parseInts(str);
-    for(int i = 0; i < integers.size(); i++) {
-        cout << integers[i] << "\n";
-    }
+    int a, b;
+    int *pa = &a, *pb = &b;
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
     return 0;
 }
-
+/////////////////////////////
