@@ -1,2 +1,2 @@
-# string-stream
+# string-stream and pointers
 first assignment
